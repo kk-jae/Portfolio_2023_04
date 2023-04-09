@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 // #454552
 
 export const Container = styled.div`
+  position: fixed;
   width: 100vw;
   height: 8vh;
   background-color: #d8e9ef;

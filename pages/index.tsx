@@ -1,7 +1,12 @@
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
 export default function Home() {
-  return (
-    <div>
-      <div></div>
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/Market/home");
+  });
+
+  return <></>;
 }
