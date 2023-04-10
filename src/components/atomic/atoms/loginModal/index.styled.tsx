@@ -33,15 +33,16 @@ export const Logo = styled.div`
   color: #4ea1d3;
   font-weight: 700;
 `;
-export const UserImp = styled.div`
+export const UserImp = styled.form`
   text-align: center;
   display: Flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   height: 300px;
 `;
 
-export const Login = styled.div`
+export const Login = styled.button`
   width: 15vw;
   display: flex;
   flex-direction: row;

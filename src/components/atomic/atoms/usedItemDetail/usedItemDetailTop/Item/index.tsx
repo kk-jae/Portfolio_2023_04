@@ -1,5 +1,5 @@
 import DOMPurify from "dompurify";
-import { IQuery } from "../../../../../commons/types/generated/types";
+import { IQuery } from "../../../../../../commons/types/generated/types";
 import * as S from "./index.styled";
 
 interface IProps {

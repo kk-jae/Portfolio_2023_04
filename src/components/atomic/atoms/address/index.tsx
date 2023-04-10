@@ -22,9 +22,9 @@ export const AddressInput = () => {
     setAddress(data?.address);
   };
 
-  const onChangeAddressDetail = (event) => {
-    setAddressDetail(event.target.value);
-  };
+  // const onChangeAddressDetail = (event:MouseEvent<HTMLDivElement>):void => {
+  //   setAddressDetail(event.target.value);
+  // };
 
   const AddressShowModal = () => {
     setAddressIsModalOpen((prev) => !prev);
