@@ -1,11 +1,11 @@
 import { UsedItemTopBar } from "../../../src/components/atomic/Molecule/useditemTopbar";
-import { HomeUI } from "../../../src/components/units/home";
+import { ListUI } from "../../../src/components/units/list";
 
 export default function Home() {
   return (
     <>
       <UsedItemTopBar />
-      <HomeUI />
+      <ListUI />
     </>
   );
 }
