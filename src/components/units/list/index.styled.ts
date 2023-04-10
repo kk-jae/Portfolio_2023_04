@@ -21,6 +21,7 @@ export const Wrapper_Top = styled.div`
   border-bottom: 1px solid #454552;
   padding: 10px 10px 10px 10px;
 `;
+
 export const Top_Title = styled.div``;
 
 export const Wrapper_Middle = styled.div``;

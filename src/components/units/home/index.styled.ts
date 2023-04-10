@@ -33,7 +33,9 @@ export const Left_Text_Sub = styled.div`
   font-size: 50px;
 `;
 
-export const Left_Text_Bottom = styled.span``;
+export const Left_Text_Bottom = styled.span`
+  margin-bottom: 20px;
+`;
 export const Market = styled.span`
   font-size: 70px;
   font-weight: 600;

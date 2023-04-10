@@ -1,7 +1,4 @@
-import {
-  IQuery,
-  IQueryFetchUseditemArgs,
-} from "../../../../commons/types/generated/types";
+import { IQuery } from "../../../../commons/types/generated/types";
 import { gql, useQuery } from "@apollo/client";
 
 export const FETCH_USER_LOGGED_IN = gql`
@@ -15,7 +12,7 @@ export const FETCH_USER_LOGGED_IN = gql`
     }
   }
 `;
-export const useQueryFetchUseditem = () => {
+export const useQueryFetchUserLoggedIn = () => {
   const query =
     useQuery<Pick<IQuery, "fetchUserLoggedIn">>(FETCH_USER_LOGGED_IN);
 

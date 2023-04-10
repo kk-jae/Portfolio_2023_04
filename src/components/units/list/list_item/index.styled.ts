@@ -15,9 +15,13 @@ export const ItemDetail = styled.div`
   overflow: hidden;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
   :hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
   }
 
   ::before {
@@ -25,7 +29,7 @@ export const ItemDetail = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;
 

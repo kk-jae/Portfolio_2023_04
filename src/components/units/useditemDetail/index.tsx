@@ -1,5 +1,5 @@
-import { UsedItemDetailBottom } from "../../atomic/atoms/usedItemDetailBottom";
-import { UsedItemDetailTop } from "../../atomic/atoms/usedItemDetailTop";
+import { UsedItemDetailBottom } from "../../atomic/atoms/usedItemDetail/usedItemDetailBottom";
+import { UsedItemDetailTop } from "../../atomic/atoms/usedItemDetail/usedItemDetailTop";
 import * as S from "./index.styled";
 
 export const UsedItemDetailUI = () => {
