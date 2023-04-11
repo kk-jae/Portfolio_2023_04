@@ -28,9 +28,10 @@ export const Seller_Middle_Item = styled.span`
   padding-right: 10px;
 `;
 
-export const Seller_Bottom = styled.div`
+export const Seller_Bottom = styled.form`
   width: 100%;
   background-color: #f5f5f5;
+  position: relative;
 `;
 
 export const Seller_Bottom_Item = styled.div`
@@ -55,4 +56,28 @@ export const Seller_Bottom_Item_Title = styled.div`
   font-weight: 700;
 `;
 
+export const Img_Item = styled.img`
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: #4ea1d3;
+  background-size: cover;
+`;
+
 export const Item = styled.div``;
+
+export const BtnWrapper = styled.div`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+`;
+
+export const Img_Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Img = styled.div`
+  padding: 20px 0px 10px 0px;
+`;

@@ -36,8 +36,16 @@ export default function ResetPassword() {
         <S.Wrapper>
           <S.Logo>Market</S.Logo>
           <S.UserImp>
-            <Input placeholder="이메일을 입력해주세요." height={40} />
-            <Input placeholder="비밀번호를 입력해주세요." height={40} />
+            <Input
+              placeholder="이메일을 입력해주세요."
+              height={40}
+              name="email"
+            />
+            <Input
+              placeholder="비밀번호를 입력해주세요."
+              height={40}
+              name="password"
+            />
             <S.Login>로그인</S.Login>
             <S.ResetPassword>비밀번호를 잃어버렸나요?</S.ResetPassword>
             <S.SighUp>회원이 아니신가요?</S.SighUp>

@@ -29,6 +29,20 @@ export const Address_Text = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 `;
+export const AddressBtn = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  width: 100px;
+  height: 45px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #4ea1d3;
+  cursor: pointer;
+`;
 
 export const Map = styled.div`
   width: 400px;

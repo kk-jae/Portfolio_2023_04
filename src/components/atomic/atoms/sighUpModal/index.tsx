@@ -1,19 +1,23 @@
 import { CloseOutlined } from "@ant-design/icons";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import Modal from "react-modal";
+import { UseUser } from "../../../commons/hooks/custom/useUser";
+import { Schema } from "../../../commons/validation";
+import { Button } from "../Button";
 import { Input } from "../Input";
 import * as S from "./index.styled";
 
 export default function SighUp() {
   const [showModal, setShowModal] = useState(false);
+
+  const { onClickSighUp } = UseUser();
+
   const handleShow = () => {
     setShowModal(true);
   };
   const handleClose = () => {
-    setShowModal(false);
-  };
-
-  const onClickSighUp = () => {
     setShowModal(false);
   };
 
@@ -29,6 +33,10 @@ export default function SighUp() {
       borderRadius: "10px",
     },
   };
+  const method = useForm({
+    mode: "onChange",
+    resolver: yupResolver(Schema),
+  });
 
   return (
     <>
@@ -37,16 +45,41 @@ export default function SighUp() {
         <S.Cancel>
           <CloseOutlined onClick={handleClose} />
         </S.Cancel>
-        <S.Wrapper>
-          <S.Logo>Market</S.Logo>
-          <S.UserImp>
-            <Input placeholder="닉네임을 입력해주세요." height={40} />
-            <Input placeholder="이메일을 입력해주세요." height={40} />
-            <Input placeholder="비밀번호를 입력해주세요." height={40} />
-            <Input placeholder="비밀번호를 확인해주세요." height={40} />
-            <S.SighUp onClick={onClickSighUp}>회원가입</S.SighUp>
-          </S.UserImp>
-        </S.Wrapper>
+        <FormProvider {...method}>
+          <S.Wrapper onSubmit={method.handleSubmit(onClickSighUp)}>
+            <S.Logo>Market</S.Logo>
+            <S.UserImp>
+              <Input
+                placeholder="닉네임을 입력해주세요."
+                height={40}
+                width={300}
+                name="name"
+              />
+              <Input
+                placeholder="이메일을 입력해주세요."
+                height={40}
+                width={300}
+                name="email"
+                type="email"
+              />
+              <Input
+                placeholder="비밀번호를 입력해주세요."
+                height={40}
+                width={300}
+                name="password"
+                type="password"
+              />
+              <Input
+                placeholder="비밀번호를 확인해주세요."
+                height={40}
+                width={300}
+                name="password2"
+                type="password"
+              />
+              <Button title="회원가입" width={200} />
+            </S.UserImp>
+          </S.Wrapper>
+        </FormProvider>
       </Modal>
     </>
   );

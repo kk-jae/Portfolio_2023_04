@@ -1,7 +1,11 @@
 import { useRouter } from "next/router";
 import { priceToString } from "../../../../../../commons/libraries/price";
 import { getDate } from "../../../../../../commons/libraries/utils";
+import { useMoveToPage } from "../../../../../commons/hooks/custom/useMoveToPage";
+import { UseUsedItem } from "../../../../../commons/hooks/custom/useUsedItem";
 import { useQueryFetchUseditem } from "../../../../../commons/hooks/query/useQueryFetchUseditem";
+import { useQueryFetchUserLoggedIn } from "../../../../../commons/hooks/query/useQueryFetchUserLoggedIn";
+import { Button } from "../../../Button";
 import { SellerItem } from "../Item";
 import * as S from "./index.styled";
 
@@ -9,12 +13,32 @@ export const SellerImp = () => {
   const router = useRouter();
 
   const { data } = useQueryFetchUseditem(String(router.query.useditem));
+  const { data: loginUser } = useQueryFetchUserLoggedIn();
+  const { onClickMoveToPage } = useMoveToPage();
+  const { onClickDeleteUsedItem } = UseUsedItem();
 
   return (
     <S.Container>
       <S.Seller>
         <S.Seller_Top>
           <S.Seller_Top_Title>{data?.fetchUseditem.remarks}</S.Seller_Top_Title>
+          {data?.fetchUseditem.seller?.name ===
+          loginUser?.fetchUserLoggedIn.name ? (
+            <S.SellerBtn>
+              <Button
+                title="수정하기"
+                onClick={onClickMoveToPage(
+                  `/Market/${router.query.useditem}/edit`
+                )}
+              />
+              <Button
+                title="삭제하기"
+                onClick={onClickDeleteUsedItem(String(router.query.useditem))}
+              />
+            </S.SellerBtn>
+          ) : (
+            <div></div>
+          )}
         </S.Seller_Top>
         <S.Seller_Middle>
           <S.Seller_Middle_Item>조회 1,170</S.Seller_Middle_Item>

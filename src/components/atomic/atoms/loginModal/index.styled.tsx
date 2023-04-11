@@ -10,6 +10,7 @@ export const Top = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
 `;
@@ -29,13 +30,13 @@ export const Wrapper = styled.div`
 
 export const Logo = styled.div`
   font-size: 40px;
-  padding: 20px 20px;
+  padding: 20px 0px 0px 0px;
   color: #4ea1d3;
   font-weight: 700;
 `;
 export const UserImp = styled.form`
   text-align: center;
-  display: Flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -60,6 +61,7 @@ export const ResetPassword = styled.div`
   color: #bfbfbf;
 `;
 
-export const SighUp = styled.div`
-  text-decoration: underline;
+export const SighUpWrapper = styled.div`
+  position: absolute;
+  bottom: 20px;
 `;

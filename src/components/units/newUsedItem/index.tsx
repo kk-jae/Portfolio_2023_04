@@ -1,10 +1,14 @@
 import { UsedItemNew } from "../../atomic/atoms/usedItemNew";
 import * as S from "./index.styled";
 
-export const CreateUsedItem = () => {
+export interface IEditProps {
+  isEdit: boolean;
+}
+
+export const CreateUsedItem = (props: IEditProps) => {
   return (
     <S.Container>
-      <UsedItemNew />
+      <UsedItemNew isEdit={props.isEdit} />
     </S.Container>
   );
 };

@@ -5,7 +5,7 @@ export default function NewUsedItemUI() {
   return (
     <>
       <UsedItemTopBar />
-      <CreateUsedItem />
+      <CreateUsedItem isEdit={false} />
     </>
   );
 }

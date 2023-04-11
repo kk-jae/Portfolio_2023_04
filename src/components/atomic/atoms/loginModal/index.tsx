@@ -8,10 +8,11 @@ import * as S from "./index.styled";
 import { Button } from "../Button";
 import { Schema } from "../../../commons/validation";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { UseUser } from "../../../commons/hooks/custom/useUser";
 
 export default function Login() {
   const [showModal, setShowModal] = useState(false);
-  Modal.setAppElement("#root");
+  const { onClickLogin } = UseUser();
 
   const handleShow = () => {
     setShowModal(true);
@@ -38,10 +39,6 @@ export default function Login() {
     password?: string;
   }
 
-  const onClickLogin = (data: IDate) => {
-    console.log(data);
-  };
-
   const method = useForm({
     mode: "onChange",
     resolver: yupResolver(Schema),
@@ -49,7 +46,7 @@ export default function Login() {
 
   return (
     <>
-      <S.Container onClick={handleShow} id="root">
+      <S.Container onClick={handleShow}>
         <LoginOutlined style={{ fontSize: "25px" }} />
         <S.Container>로그인</S.Container>
       </S.Container>
@@ -76,9 +73,11 @@ export default function Login() {
                 height={40}
               />
               <Button title="로그인" width={200} />
-              <SighUp />
             </FormProvider>
           </S.UserImp>
+          <S.SighUpWrapper>
+            <SighUp />
+          </S.SighUpWrapper>
         </S.Wrapper>
       </Modal>
     </>

@@ -31,14 +31,26 @@ export const Right = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 200px;
 `;
 
 export const Right_Item = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
+  padding-right: 20px;
   cursor: pointer;
 `;
+
+export const Right_Item_My = styled.div`
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 20px;
+`;
+export const My_Imp = styled.span``;
+export const My_Point = styled.span``;
 
 export const SendMessage = styled.div``;

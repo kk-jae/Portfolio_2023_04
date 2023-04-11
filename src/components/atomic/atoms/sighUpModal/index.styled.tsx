@@ -2,9 +2,11 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
   position: relative;
-  padding-left: 0.5vw;
   text-decoration: underline;
   cursor: pointer;
+  color: #454552;
+  font-size: 15px;
+  font-weight: 500;
 `;
 
 export const Cancel = styled.div`
@@ -14,7 +16,7 @@ export const Cancel = styled.div`
   padding: 20px;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,19 +33,8 @@ export const UserImp = styled.div`
   display: Flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 400px;
-`;
-
-export const SighUp = styled.div`
-  width: 15vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  height: 40px;
-  border: 5px;
-  background-color: #d8e9ef;
-  cursor: pointer;
+  height: 400px;
 `;
 
 export const ResetPassword = styled.div`

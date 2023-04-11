@@ -11,6 +11,7 @@ export const Seller = styled.div`
 `;
 export const Seller_Top = styled.div`
   padding-bottom: 20px;
+  position: relative;
 `;
 export const Seller_Top_Title = styled.div`
   font-weight: 700;
@@ -31,6 +32,16 @@ export const Seller_Middle_Item = styled.span`
 export const Seller_Bottom = styled.div`
   width: 100%;
   background-color: #f5f5f5;
+`;
+
+export const SellerBtn = styled.div`
+  width: 13%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
 export const Seller_Bottom_Item = styled.div`
