@@ -48,6 +48,7 @@ export const Right_selet = styled.span`
 `;
 
 export const Baskets = styled.div`
+  width: 100%;
   padding: 20px;
   margin: auto;
   display: flex;
@@ -60,9 +61,12 @@ export const Baskets_left = styled.div`
   font-weight: 700;
 `;
 
-export const Baskets_right = styled.div``;
+export const Baskets_right = styled.div`
+  width: 90%;
+`;
+
 export const Baskets_item = styled.div`
-  width: 1000px;
+  width: 100%;
   padding: 10px;
   margin: 0px 0px 10px 10px;
   display: flex;

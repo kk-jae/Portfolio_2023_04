@@ -22,6 +22,7 @@ export const CreateImp = (props: IEditProps) => {
     mode: "onChange",
     resolver: yupResolver(Schema),
   });
+
   const {
     onClickCreateUsedItem,
     onClickUpdateUsedItem,
@@ -29,6 +30,8 @@ export const CreateImp = (props: IEditProps) => {
     onChangeUploadFile2,
     imgUrl1,
     imgUrl2,
+    setImgUrl1,
+    setImgUrl2,
   } = UseUsedItem();
   const [address, setAddress] = useState("");
   const [addressZipCode, setAddressZipCode] = useState("");
@@ -42,6 +45,19 @@ export const CreateImp = (props: IEditProps) => {
   const onClickImgRef2 = () => {
     ImgRef2.current?.click();
   };
+
+  if (!imgUrl1 && editData?.fetchUseditem.images?.[0]) {
+    setImgUrl1(editData?.fetchUseditem.images?.[0]);
+  }
+  if (!imgUrl2 && editData?.fetchUseditem.images?.[1]) {
+    setImgUrl2(editData?.fetchUseditem.images?.[1]);
+  }
+  if (!address && editData?.fetchUseditem.useditemAddress?.address) {
+    setAddress(editData?.fetchUseditem.useditemAddress?.address);
+  }
+  if (!addressZipCode && editData?.fetchUseditem.useditemAddress?.zipcode) {
+    setAddressZipCode(editData?.fetchUseditem.useditemAddress?.zipcode);
+  }
 
   return (
     <S.Container>
@@ -58,9 +74,11 @@ export const CreateImp = (props: IEditProps) => {
                 ? method.handleSubmit(
                     onClickUpdateUsedItem(
                       String(router.query.useditem),
-                      address,
-                      addressZipCode
-                    )
+                      String(address),
+                      String(addressZipCode),
+                      imgUrl1,
+                      imgUrl2
+                    )(editData?.fetchUseditem)
                   )
                 : method.handleSubmit(
                     onClickCreateUsedItem(address, addressZipCode)
@@ -71,7 +89,11 @@ export const CreateImp = (props: IEditProps) => {
               <S.Seller_Bottom_Item_Title>상품명</S.Seller_Bottom_Item_Title>
               <Input
                 name="usedItemName"
-                placeholder="상품명을 입력해주세요"
+                placeholder={
+                  editData?.fetchUseditem.name
+                    ? editData?.fetchUseditem.name
+                    : "상품명을 입력해주세요"
+                }
                 width={500}
                 height={50}
                 defaultValue={editData?.fetchUseditem.name}
@@ -80,28 +102,43 @@ export const CreateImp = (props: IEditProps) => {
             <S.Seller_Bottom_Item>
               <S.Seller_Bottom_Item_Title>상품 요약</S.Seller_Bottom_Item_Title>
               <Input
-                placeholder="제목을 입력해주세요"
+                placeholder={
+                  editData?.fetchUseditem.remarks
+                    ? editData?.fetchUseditem.remarks
+                    : "상품 제목을 작성해주세요"
+                }
                 width={500}
                 height={50}
                 name="title"
+                defaultValue={editData?.fetchUseditem.remarks}
               />
             </S.Seller_Bottom_Item>
             <S.Seller_Bottom_Item>
               <S.Seller_Bottom_Item_Title>상품 내용</S.Seller_Bottom_Item_Title>
               <Input
                 name="contents"
-                placeholder="상품 설명을 입력해주세요"
+                placeholder={
+                  editData?.fetchUseditem.contents
+                    ? editData?.fetchUseditem.contents
+                    : "상품 설명을 작성해주세요"
+                }
                 width={500}
                 height={50}
+                defaultValue={editData?.fetchUseditem.contents}
               />
             </S.Seller_Bottom_Item>
             <S.Seller_Bottom_Item>
               <S.Seller_Bottom_Item_Title>판매가격</S.Seller_Bottom_Item_Title>
               <Input
                 name="price"
-                placeholder="판매가격을 원 단위로 쉼표업이 적어주세요. 예) 10만원 -> 100000"
+                placeholder={
+                  editData?.fetchUseditem.price
+                    ? String(editData?.fetchUseditem.price)
+                    : "판매가격을 원 단위로 쉼표업이 적어주세요. 예) 10만원 -> 100000"
+                }
                 width={500}
                 height={50}
+                defaultValue={editData?.fetchUseditem.price}
               />
             </S.Seller_Bottom_Item>
             <S.Seller_Bottom_Item>
@@ -110,6 +147,10 @@ export const CreateImp = (props: IEditProps) => {
                 setAddressZipCode={setAddressZipCode}
                 address={address}
                 addressZipCode={addressZipCode}
+                editAddress={editData?.fetchUseditem.useditemAddress?.address}
+                editAddressZipCode={
+                  editData?.fetchUseditem.useditemAddress?.zipcode
+                }
               />
             </S.Seller_Bottom_Item>
             <S.Seller_Bottom_Item>

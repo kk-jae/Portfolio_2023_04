@@ -1,3 +1,4 @@
+import { FETCH_USED_ITEM } from "./../query/useQueryFetchUseditem";
 import { useMutationUpdateUsedItem } from "./../mutation/useMutationUpdateUseditem";
 import { useRouter } from "next/router";
 import { FETCH_USED_ITEMS } from "../query/useQueryFetchUseditems";
@@ -6,6 +7,7 @@ import { useMutationCreateUseditem } from "../mutation/useMutationCreateUseditem
 import useMutationDeleteUsedItem from "../mutation/useMutationDeleteUseditem";
 import { ChangeEvent, useState } from "react";
 import { useMutationUploadFile } from "../mutation/useMutationUploadFile";
+import { IUpdateUseditemInput } from "../../../../commons/types/generated/types";
 
 export const UseUsedItem = () => {
   const router = useRouter();
@@ -71,26 +73,59 @@ export const UseUsedItem = () => {
     };
 
   const onClickUpdateUsedItem =
-    (useditemId: string, address: string, zipcode: string) => async (data) => {
-      const updateUseditemInput = {};
+    (
+      useditemId: string,
+      address: string,
+      zipcode: string,
+      imgUrl1: string | undefined,
+      imgUrl2: string | undefined
+    ) =>
+    (editData: any) =>
+    async (data: any) => {
+      const useditemAddress = {
+        zipcode,
+        address,
+      };
+      const updateUseditemInput = {
+        name: data.usedItemName,
+        remarks: data.title,
+        contents: data.contents,
+        price: Number(data.price),
+        useditemAddress: useditemAddress,
+        images: [imgUrl1, imgUrl2],
+      };
+      if (!updateUseditemInput.name) updateUseditemInput.name = editData.name;
+      if (!updateUseditemInput.remarks)
+        updateUseditemInput.remarks = editData.remarks;
+      if (!updateUseditemInput.contents)
+        updateUseditemInput.contents = editData.contents;
+      if (!updateUseditemInput.price)
+        updateUseditemInput.price = Number(editData.price);
 
-      console.log(data);
-      // try {
-      //   await updateUsedItem({
-      //     variables: {
-      //       updateUseditemInput: updateUseditemInput,
-      //       useditemId,
-      //     },
-      //   });
-      //   Modal.success({
-      //     content: "게시물이 수정되었습니다.",
-      //   });
-      // } catch (error) {
-      //   if (error instanceof Error)
-      //     Modal.error({
-      //       content: error.message,
-      //     });
-      // }
+      try {
+        await updateUsedItem({
+          variables: {
+            // @ts-ignore
+            updateUseditemInput,
+            useditemId,
+          },
+          refetchQueries: [
+            {
+              query: FETCH_USED_ITEM,
+              variables: { useditemId },
+            },
+          ],
+        });
+        Modal.success({
+          content: "게시물이 수정되었습니다.",
+        });
+        router.push(`/Market/${useditemId}`);
+      } catch (error) {
+        if (error instanceof Error)
+          Modal.error({
+            content: error.message,
+          });
+      }
     };
 
   const onClickDeleteUsedItem = (useditemId: string) => async () => {
@@ -143,5 +178,7 @@ export const UseUsedItem = () => {
     onChangeUploadFile2,
     imgUrl1,
     imgUrl2,
+    setImgUrl1,
+    setImgUrl2,
   };
 };

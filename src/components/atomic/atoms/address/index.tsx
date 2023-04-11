@@ -5,6 +5,7 @@ import { Button } from "../Button";
 import { Input } from "../Input";
 import * as S from "./index.styled";
 import DaumPostcodeEmbed from "react-daum-postcode";
+import { Maybe } from "graphql/jsutils/Maybe";
 
 interface IAddressData {
   address?: string;
@@ -13,11 +14,13 @@ interface IAddressData {
   setAddressZipCode?: any;
   setAddressDetail?: any;
   addressZipCode?: string;
+  editAddress: Maybe<string> | undefined | string;
+  editAddressZipCode: Maybe<string> | undefined;
 }
 export const AddressInput = (props: IAddressData) => {
   const [addressIsModalOpen, setAddressIsModalOpen] = useState(false);
 
-  const AddressHandleComplete = (data: IAddressData) => {
+  const AddressHandleComplete = (data: any) => {
     setAddressIsModalOpen(false);
     props.setAddressZipCode(data?.zonecode);
     props.setAddress(data?.address);
@@ -43,6 +46,7 @@ export const AddressInput = (props: IAddressData) => {
               height={50}
               value={props.addressZipCode}
               disabled={true}
+              defaultValue={props.editAddressZipCode}
             />
             <S.AddressBtn title="우편번호 검색" onClick={AddressShowModal}>
               우편번호 검색
@@ -64,6 +68,7 @@ export const AddressInput = (props: IAddressData) => {
             height={50}
             value={props.address}
             disabled={true}
+            defaultValue={props.editAddress}
           />
         </S.Address_Text>
       </S.Item_Map_Wrapper>

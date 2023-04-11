@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { priceToString } from "../../../commons/libraries/price";
 import { useQueryFetchUserLoggedIn } from "../../commons/hooks/query/useQueryFetchUserLoggedIn";
 import * as S from "../myPage/index.styled";
@@ -37,9 +38,6 @@ export default function MyPageUI(): JSX.Element {
             </S.Profile_right_text>
           </S.Profile_right>
         </S.Profile_Wrapper>
-        <S.Baskets>
-          <S.Baskets_left>오늘 본 상품</S.Baskets_left>
-        </S.Baskets>
       </S.Wrapper>
     </S.Container>
   );

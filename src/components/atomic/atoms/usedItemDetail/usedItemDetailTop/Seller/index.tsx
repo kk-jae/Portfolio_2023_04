@@ -5,6 +5,7 @@ import { useMoveToPage } from "../../../../../commons/hooks/custom/useMoveToPage
 import { UseUsedItem } from "../../../../../commons/hooks/custom/useUsedItem";
 import { useQueryFetchUseditem } from "../../../../../commons/hooks/query/useQueryFetchUseditem";
 import { useQueryFetchUserLoggedIn } from "../../../../../commons/hooks/query/useQueryFetchUserLoggedIn";
+import KakaoMapPage from "../../../../../commons/kakaoMap";
 import { Button } from "../../../Button";
 import { SellerItem } from "../Item";
 import * as S from "./index.styled";
@@ -67,9 +68,13 @@ export const SellerImp = () => {
             </S.Seller_Bottom_Item_Sub>
           </S.Seller_Bottom_Item>
           <S.Seller_Bottom_Item>
-            <S.Seller_Bottom_Item_Title>주소</S.Seller_Bottom_Item_Title>
-            <S.Seller_Bottom_Item_Sub>
-              {data?.fetchUseditem.useditemAddress?.address}
+            <S.Seller_Bottom_Item_Title>거래위치</S.Seller_Bottom_Item_Title>
+            <S.Seller_Bottom_Item_Sub
+              style={{ width: "400px", height: "300px" }}
+            >
+              <KakaoMapPage
+                address={data?.fetchUseditem.useditemAddress?.address}
+              />
             </S.Seller_Bottom_Item_Sub>
           </S.Seller_Bottom_Item>
         </S.Seller_Bottom>

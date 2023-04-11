@@ -1,5 +1,6 @@
 import * as S from "./index.styled";
 import { useFormContext } from "react-hook-form";
+import { Maybe } from "../../../../commons/types/generated/types";
 
 interface IInputProps {
   placeholder?: string;
@@ -9,7 +10,7 @@ interface IInputProps {
   width?: number;
   height?: number;
   value?: string | undefined;
-  defaultValue?: string;
+  defaultValue?: Maybe<number> | undefined | string;
 }
 
 export const Input = (props: IInputProps) => {

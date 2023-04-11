@@ -17,7 +17,6 @@ export const UsedItemTopBar = () => {
   const { onClickMoveToPage } = useMoveToPage();
   const { onClickLogOut } = UseUser();
   const { data } = useQueryFetchUserLoggedIn();
-  console.log(data?.fetchUserLoggedIn.userPoint?.amount);
 
   return (
     <S.Container>
