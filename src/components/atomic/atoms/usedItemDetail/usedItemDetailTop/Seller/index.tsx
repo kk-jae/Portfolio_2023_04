@@ -33,7 +33,7 @@ export const SellerImp = () => {
               <Button
                 title="수정하기"
                 onClick={onClickMoveToPage(
-                  `/Market/${router.query.useditem}/edit`
+                  `/Market/detail/${router.query.useditem}/edit`
                 )}
               />
               <Button

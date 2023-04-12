@@ -122,7 +122,7 @@ export const UseUsedItem = () => {
         Modal.success({
           content: "게시물이 수정되었습니다.",
         });
-        router.push(`/Market/${useditemId}`);
+        router.push(`/Market/detail/${useditemId}`);
       } catch (error) {
         if (error instanceof Error)
           Modal.error({

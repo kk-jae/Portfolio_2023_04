@@ -36,7 +36,7 @@ export const ListItem = () => {
       {data?.fetchUseditems.map((el, index) => (
         <S.ItemDetail
           key={index}
-          onClick={onClickMoveToPage(`/Market/${el._id}`)}
+          onClick={onClickMoveToPage(`/Market/detail/${el._id}`)}
         >
           <InfiniteScroll pageStart={0} loadMore={loadFunc} hasMore={true}>
             {el.images?.[0] === "" || el.images?.length === 0 ? (
