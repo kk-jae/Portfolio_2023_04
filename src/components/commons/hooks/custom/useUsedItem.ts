@@ -1,13 +1,15 @@
+import { FETCH_USER_LOGGED_IN } from "./../query/useQueryFetchUserLoggedIn";
+import { useMutationCreatePointTransactionOfBuyingAndSelling } from "./../mutation/useMutationCreatePointTransactionOfBuyingAndSelling";
 import { FETCH_USED_ITEM } from "./../query/useQueryFetchUseditem";
 import { useMutationUpdateUsedItem } from "./../mutation/useMutationUpdateUseditem";
 import { useRouter } from "next/router";
-import { FETCH_USED_ITEMS } from "../query/useQueryFetchUseditems";
 import { Modal } from "antd";
 import { useMutationCreateUseditem } from "../mutation/useMutationCreateUseditem";
 import useMutationDeleteUsedItem from "../mutation/useMutationDeleteUseditem";
 import { ChangeEvent, useState } from "react";
 import { useMutationUploadFile } from "../mutation/useMutationUploadFile";
 import { IUpdateUseditemInput } from "../../../../commons/types/generated/types";
+import { FETCH_USED_ITEMS } from "../query/useQueryFetchUseditems";
 
 export const UseUsedItem = () => {
   const router = useRouter();
@@ -15,6 +17,7 @@ export const UseUsedItem = () => {
   const [deleteUsedItem] = useMutationDeleteUsedItem();
   const [updateUsedItem] = useMutationUpdateUsedItem();
   const [uploadFile] = useMutationUploadFile();
+  const [buyUsedItem] = useMutationCreatePointTransactionOfBuyingAndSelling();
   const [imgUrl1, setImgUrl1] = useState("");
   const [imgUrl2, setImgUrl2] = useState("");
   interface IData {
@@ -170,6 +173,31 @@ export const UseUsedItem = () => {
     setImgUrl2(result.data.uploadFile.url ?? "");
   };
 
+  const onClickBuyUsedItem = (useritemId: string) => async () => {
+    try {
+      await buyUsedItem({
+        variables: {
+          useritemId,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_USER_LOGGED_IN,
+          },
+        ],
+      });
+      Modal.success({
+        content: "상품이 구매되었습니다. 안전거래하세요!",
+      });
+      router.push("/Market/list");
+    } catch (error) {
+      if (error instanceof Error) {
+        Modal.error({
+          content: error.message,
+        });
+      }
+    }
+  };
+
   return {
     onClickCreateUsedItem,
     onClickUpdateUsedItem,
@@ -180,5 +208,6 @@ export const UseUsedItem = () => {
     imgUrl2,
     setImgUrl1,
     setImgUrl2,
+    onClickBuyUsedItem,
   };
 };

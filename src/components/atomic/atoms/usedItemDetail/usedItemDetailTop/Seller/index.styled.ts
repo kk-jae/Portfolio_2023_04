@@ -35,7 +35,6 @@ export const Seller_Bottom = styled.div`
 `;
 
 export const SellerBtn = styled.div`
-  width: 13%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

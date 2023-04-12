@@ -27,6 +27,7 @@ export const Left = styled.img`
 `;
 
 export const Center = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -39,12 +40,15 @@ export const Center_Name = styled.div`
 export const Center_Contents = styled.div`
   font-size: 14px;
 `;
-export const Center_Answer = styled.div``;
+export const Center_Answer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 export const Center_Answer_Item = styled.button`
-  margin-top: 8px;
-  padding: 0px 5px 0px 5px;
-  font-size: 13px;
+  margin: 8px 5px 0px 0px;
+  padding: 3px;
+  font-size: 11px;
   text-align: center;
   cursor: pointer;
   border: 1px solid #bfbfbf;
@@ -57,4 +61,6 @@ export const Right = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  color: #bfbfbf;
+  font-size: 11px;
 `;

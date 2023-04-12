@@ -14,4 +14,5 @@ export const Button = styled.button<IButton>`
   background-color: #4ea1d3;
   cursor: pointer;
   font-weight: 500;
+  margin: 0px 3px 0px 3px;
 `;

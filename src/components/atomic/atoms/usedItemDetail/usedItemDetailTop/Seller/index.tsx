@@ -16,7 +16,7 @@ export const SellerImp = () => {
   const { data } = useQueryFetchUseditem(String(router.query.useditem));
   const { data: loginUser } = useQueryFetchUserLoggedIn();
   const { onClickMoveToPage } = useMoveToPage();
-  const { onClickDeleteUsedItem } = UseUsedItem();
+  const { onClickDeleteUsedItem, onClickBuyUsedItem } = UseUsedItem();
 
   return (
     <S.Container>
@@ -38,7 +38,12 @@ export const SellerImp = () => {
               />
             </S.SellerBtn>
           ) : (
-            <div></div>
+            <S.SellerBtn>
+              <Button
+                title="구매하기"
+                onClick={onClickBuyUsedItem(String(data?.fetchUseditem._id))}
+              />
+            </S.SellerBtn>
           )}
         </S.Seller_Top>
         <S.Seller_Middle>

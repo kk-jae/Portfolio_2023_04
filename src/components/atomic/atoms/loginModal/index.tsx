@@ -64,6 +64,7 @@ export default function Login() {
                 type="email"
                 width={300}
                 height={40}
+                value="kk_jae@naver.com"
               />
               <Input
                 placeholder="비밀번호를 입력해주세요."
@@ -71,6 +72,7 @@ export default function Login() {
                 type="password"
                 width={300}
                 height={40}
+                value="123"
               />
               <Button title="로그인" width={200} />
             </FormProvider>

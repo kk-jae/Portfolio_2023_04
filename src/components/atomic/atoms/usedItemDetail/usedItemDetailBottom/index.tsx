@@ -4,8 +4,8 @@ import { NewComment } from "./newComment";
 export const UsedItemDetailBottom = () => {
   return (
     <>
-      <ListComment />
       <NewComment />
+      <ListComment />
     </>
   );
 };
