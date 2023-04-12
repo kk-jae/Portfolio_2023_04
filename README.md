@@ -1,4 +1,4 @@
-## 권현재의 중고 마켓 
+## 권현재의 Market
 
 1. yarn install
 2. yarn dev
