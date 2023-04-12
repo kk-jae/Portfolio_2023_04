@@ -16,5 +16,6 @@ export const useAuth = (): void => {
       });
       router.push("/Market/list");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
