@@ -1,8 +1,6 @@
 ## 권현재의 Market
 
-1. yarn install
-2. yarn dev
-
+배포 링크 : kk-jae.com 
 
 https://user-images.githubusercontent.com/114847858/231348284-8433fe88-4f4c-4771-a32b-c338abb629ac.mp4
 
