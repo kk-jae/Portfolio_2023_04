@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 권현재의 Market
 
-## Getting Started
+1. yarn install
+2. yarn dev
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+https://user-images.githubusercontent.com/114847858/231348284-8433fe88-4f4c-4771-a32b-c338abb629ac.mp4
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 📝적용된 기능 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 1. 로그인 / 회원가입
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. 상품을 등록, 구매하기 위해서는 로그인 먼저되어야합니다. ( 시연을 위해 로그인 페이지에 value값을 지정하였습니다 )
+2. 첫 로그인 진행시 accessToken과 refreshToken을 저장하여 accessToken 만료시 (한시간) 쿠키에 저장된 refreshToken을 활용하여 자동으로 새로운 accessToken이 발급됩니다.
+3. 회원가입 및 로그인에 yup을 활용한 검증이 진행됩니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 2.상품 리스트 / 최근 본 상품
 
-## Learn More
+1. 상품 리스트는 무한스크롤로 구현하였습니다.
+2. 상품을 클릭하면 상세 화면이 보입니다.
 
-To learn more about Next.js, take a look at the following resources:
+## 3. 상품 등록하기
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. 로그인이 완료된 경우 상품 등록이 가능합니다.
+2. 상품 정보, 카카오맵, 이미지 등록이 가능합니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 4. 상품 수정
 
-## Deploy on Vercel
+1. 상품을 등록한 사람만 수정 / 삭제가 가능합니다.
+2. 수정 내용이 없다면 기본 값으로 다시 등록됩니다. 
+3. 상품을 등록한사람만 수정버튼이 보여집니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 5. 상품 구매 / 찜 / 장바구니 / 로그아웃
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. 바로구매 버튼을 누르면 상품이 구매되고, 상단 유저 포인트가 자동으로 차감됩니다. 
+2. 판매자가 아닌 사람만 구매하기 버튼이 보여집니다.
+
+## 6. 충전하기 
+
+1. 포트원 결제 솔루션을 사용하여 카카오 결제가 가능합니다.
+2. 결제 완료시 상단의 포인트가 자동으로 업데이트 됩니다.
+
+## 7. 댓글 
+
+1. 문의를 희망하는 상품에 댓글을 추가할 수 있습니다. 
+2. 삭제가 가능합니다.
+3. 본인의 댓글만 삭제하기 버튼이 보여집니다.
+4. 대댓글 작성이 가능하며 작성자만 삭제할 수 있습니다.
+
+
+## 📌 아쉬운점
+
+
+## 👂프로젝트를 진행하면서 느낀점
+
+
+## 🏃앞으로의 방향
