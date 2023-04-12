@@ -4,6 +4,9 @@
 2. yarn dev
 
 
+https://user-images.githubusercontent.com/114847858/231348284-8433fe88-4f4c-4771-a32b-c338abb629ac.mp4
+
+
 ## 📝적용된 기능 
 
 ## 1. 로그인 / 회원가입
