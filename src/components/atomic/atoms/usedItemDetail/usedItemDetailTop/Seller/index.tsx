@@ -4,6 +4,7 @@ import { getDate } from "../../../../../../commons/libraries/utils";
 import { useMoveToPage } from "../../../../../commons/hooks/custom/useMoveToPage";
 import { UseUsedItem } from "../../../../../commons/hooks/custom/useUsedItem";
 import { useQueryFetchUseditem } from "../../../../../commons/hooks/query/useQueryFetchUseditem";
+import { useQueryFetchUsedItemQuestions } from "../../../../../commons/hooks/query/useQueryFetchUsedItemQuestions";
 import { useQueryFetchUserLoggedIn } from "../../../../../commons/hooks/query/useQueryFetchUserLoggedIn";
 import KakaoMapPage from "../../../../../commons/kakaoMap";
 import { Button } from "../../../Button";
@@ -17,6 +18,9 @@ export const SellerImp = () => {
   const { data: loginUser } = useQueryFetchUserLoggedIn();
   const { onClickMoveToPage } = useMoveToPage();
   const { onClickDeleteUsedItem, onClickBuyUsedItem } = UseUsedItem();
+  const { data: questionData } = useQueryFetchUsedItemQuestions(
+    String(router.query.useditem)
+  );
 
   return (
     <S.Container>
@@ -47,8 +51,9 @@ export const SellerImp = () => {
           )}
         </S.Seller_Top>
         <S.Seller_Middle>
-          <S.Seller_Middle_Item>조회 1,170</S.Seller_Middle_Item>
-          <S.Seller_Middle_Item>댓글 2</S.Seller_Middle_Item>
+          <S.Seller_Middle_Item>
+            댓글 {questionData?.fetchUseditemQuestions.length}
+          </S.Seller_Middle_Item>
           <S.Seller_Middle_Item>
             추천 {data?.fetchUseditem.pickedCount}
           </S.Seller_Middle_Item>

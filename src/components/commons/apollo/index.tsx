@@ -6,7 +6,6 @@ import {
   fromPromise,
 } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import { accessTokenState, restoreAccessTokenLoadable } from "../stores";
@@ -19,7 +18,6 @@ interface IApolloSettingProps {
   children: JSX.Element;
 }
 export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
-  const router = useRouter();
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
   const aaa = useRecoilValueLoadable(restoreAccessTokenLoadable);
 
@@ -40,7 +38,7 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
               operation.setContext({
                 headers: {
                   ...operation.getContext().headers,
-                  Authorization: `Bearer ${newAccessToken}`,
+                  Authorization: `Bearer ${String(newAccessToken)}`,
                 },
               });
             })
