@@ -18,6 +18,10 @@ export const UsedItemTopBar = () => {
   const { onClickLogOut } = UseUser();
   const { data } = useQueryFetchUserLoggedIn();
 
+  const onClickKakaoMessage = () => {
+    window.open("https://open.kakao.com/o/swFgJUef", "권현재한테 문의하기");
+  };
+
   return (
     <S.Container>
       <S.Left>
@@ -45,7 +49,10 @@ export const UsedItemTopBar = () => {
           <S.Right_Item>
             <PaymentUI />
           </S.Right_Item>
-
+          <S.Right_Item onClick={onClickKakaoMessage}>
+            <MessageOutlined style={{ fontSize: "25px" }} />
+            <S.SendMessage>문의하기</S.SendMessage>
+          </S.Right_Item>
           <S.Right_Item onClick={onClickMoveToPage("/Market/mypage")}>
             <UserOutlined style={{ fontSize: "25px" }} />
             <S.SendMessage>마이페이지</S.SendMessage>
@@ -57,6 +64,10 @@ export const UsedItemTopBar = () => {
         </S.Right>
       ) : (
         <S.Right>
+          <S.Right_Item onClick={onClickKakaoMessage}>
+            <MessageOutlined style={{ fontSize: "25px" }} />
+            <S.SendMessage>문의하기</S.SendMessage>
+          </S.Right_Item>
           <S.Right_Item>
             <Login />
           </S.Right_Item>
