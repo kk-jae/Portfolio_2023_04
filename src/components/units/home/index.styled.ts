@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../commons/libraries/MediaQueries";
 
 export const Container = styled.div`
   background-color: #d8e9ef;
@@ -9,6 +10,11 @@ export const Container = styled.div`
   height: 100vh;
   padding-top: 8vh;
   color: #454552;
+
+  ${mediaQueries("phone")} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Left = styled.div`
@@ -18,23 +24,43 @@ export const Left = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  ${mediaQueries("phone")} {
+    width: 100vw;
+  }
 `;
 
 export const Left_Text = styled.div`
   font-weight: 500;
   display: flex;
   flex-direction: column;
+
+  ${mediaQueries("phone")} {
+    align-items: center;
+  }
 `;
 
 export const Left_Text_Main = styled.div`
   font-size: 50px;
+
+  ${mediaQueries("phone")} {
+    font-size: 30px;
+  }
 `;
 export const Left_Text_Sub = styled.div`
   font-size: 50px;
+
+  ${mediaQueries("phone")} {
+    font-size: 30px;
+  }
 `;
 
 export const Left_Text_Bottom = styled.span`
   margin-bottom: 20px;
+
+  ${mediaQueries("phone")} {
+    font-size: 13px;
+  }
 `;
 export const Market = styled.span`
   font-size: 70px;
@@ -59,6 +85,10 @@ export const Right = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  ${mediaQueries("phone")} {
+    width: 70vw;
+  }
 `;
 export const Right_img = styled.img`
   width: 100%;
