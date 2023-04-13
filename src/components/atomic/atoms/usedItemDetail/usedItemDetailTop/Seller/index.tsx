@@ -79,13 +79,11 @@ export const SellerImp = () => {
           </S.Seller_Bottom_Item>
           <S.Seller_Bottom_Item>
             <S.Seller_Bottom_Item_Title>거래위치</S.Seller_Bottom_Item_Title>
-            <S.Seller_Bottom_Item_Sub
-              style={{ width: "400px", height: "300px" }}
-            >
+            <S.Seller_Bottom_Item_Sub_Map>
               <KakaoMapPage
                 address={data?.fetchUseditem.useditemAddress?.address}
               />
-            </S.Seller_Bottom_Item_Sub>
+            </S.Seller_Bottom_Item_Sub_Map>
           </S.Seller_Bottom_Item>
         </S.Seller_Bottom>
       </S.Seller>

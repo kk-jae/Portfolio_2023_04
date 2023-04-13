@@ -1,3 +1,4 @@
+import { mediaQueries } from "./../../../../../commons/libraries/MediaQueries";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
@@ -46,12 +47,31 @@ export const SellerBtn = styled.div`
 export const Seller_Bottom_Item = styled.div`
   padding: 10px 0px 10px 20px;
   display: flex;
+
+  ${mediaQueries("phone")} {
+    flex-direction: column;
+  }
 `;
 
 export const Seller_Bottom_Item_Title = styled.div`
   width: 10vw;
   font-weight: 700;
+
+  ${mediaQueries("phone")} {
+    width: 100%;
+    padding-bottom: 8px;
+  }
 `;
 export const Seller_Bottom_Item_Sub = styled.div``;
+export const Seller_Bottom_Item_Sub_Map = styled.div`
+  width: 400px;
+  height: 300px;
+
+  ${mediaQueries("phone")} {
+    width: 100%;
+    height: 200px;
+    padding-right: 8px;
+  }
+`;
 
 export const Item = styled.div``;

@@ -27,6 +27,7 @@ export const Left = styled.div`
 
   ${mediaQueries("phone")} {
     width: 100vw;
+    padding-bottom: -10px;
   }
 `;
 
@@ -44,7 +45,7 @@ export const Left_Text_Main = styled.div`
   font-size: 50px;
 
   ${mediaQueries("phone")} {
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 export const Left_Text_Sub = styled.div`

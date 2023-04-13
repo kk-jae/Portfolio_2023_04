@@ -2,7 +2,7 @@ import { UsedItemTopBar } from "../../../src/components/atomic/Molecule/useditem
 import MyPageUI from "../../../src/components/units/myPage";
 import NewUsedItemUI from "../new";
 
-export default function Home() {
+export default function Mypage() {
   return (
     <>
       <UsedItemTopBar />

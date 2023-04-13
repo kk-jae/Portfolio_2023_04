@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../../commons/libraries/MediaQueries";
 
 export const Container = styled.div`
   margin-top: 20px;
@@ -31,6 +32,16 @@ export const ItemDetail = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
   }
+
+  ${mediaQueries("tablet")} {
+    width: 30%;
+    height: 150px;
+  }
+
+  ${mediaQueries("phone")} {
+    width: 30%;
+    height: 100px;
+  }
 `;
 
 export const ItemImg = styled.img`
@@ -50,10 +61,23 @@ export const ItemImp = styled.div`
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
+
+  ${mediaQueries("phone")} {
+    padding: 5px;
+    height: 30%;
+  }
+  ${mediaQueries("tablet")} {
+    padding: 5px;
+    height: 25%;
+  }
 `;
 
 export const ItemName = styled.div`
   font-size: 13px;
+
+  ${mediaQueries("phone")} {
+    font-size: 10px;
+  }
 `;
 export const ItemPick = styled.div`
   color: red;

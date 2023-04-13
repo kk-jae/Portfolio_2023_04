@@ -13,7 +13,6 @@ import { useRecoilState } from "recoil";
 import { showModal } from "../../../commons/stores";
 
 export default function Login() {
-  // const [showModal, setShowModal] = useState(false);
   const [showModalUser, setShowModalUser] = useRecoilState(showModal);
   const { onClickLogin } = UseUser();
 
