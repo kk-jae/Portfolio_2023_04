@@ -34,6 +34,9 @@ export const Right = styled.div`
   justify-content: space-evenly;
   padding-top: 5px;
 
+  ${mediaQueries("tablet")} {
+    display: none;
+  }
   ${mediaQueries("phone")} {
     display: none;
   }
@@ -41,6 +44,13 @@ export const Right = styled.div`
 export const HamBurger = styled.div`
   display: none;
 
+  ${mediaQueries("tablet")} {
+    display: flex;
+    padding-top: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #4ea1d3;
+  }
   ${mediaQueries("phone")} {
     display: flex;
     padding-top: 5px;

@@ -11,6 +11,10 @@ export const Container = styled.div`
   padding-top: 8vh;
   color: #454552;
 
+  ${mediaQueries("tablet")} {
+    flex-direction: column;
+    align-items: center;
+  }
   ${mediaQueries("phone")} {
     flex-direction: column;
     align-items: center;
@@ -25,6 +29,10 @@ export const Left = styled.div`
   align-items: center;
   justify-content: center;
 
+  ${mediaQueries("tablet")} {
+    width: 100vw;
+    padding-bottom: -10px;
+  }
   ${mediaQueries("phone")} {
     width: 100vw;
     padding-bottom: -10px;
@@ -36,6 +44,9 @@ export const Left_Text = styled.div`
   display: flex;
   flex-direction: column;
 
+  ${mediaQueries("tablet")} {
+    align-items: center;
+  }
   ${mediaQueries("phone")} {
     align-items: center;
   }
@@ -44,12 +55,19 @@ export const Left_Text = styled.div`
 export const Left_Text_Main = styled.div`
   font-size: 50px;
 
+  ${mediaQueries("tablet")} {
+    font-size: 35px;
+  }
   ${mediaQueries("phone")} {
     font-size: 25px;
   }
 `;
 export const Left_Text_Sub = styled.div`
   font-size: 50px;
+
+  ${mediaQueries("tablet")} {
+    font-size: 40px;
+  }
 
   ${mediaQueries("phone")} {
     font-size: 30px;
@@ -59,6 +77,9 @@ export const Left_Text_Sub = styled.div`
 export const Left_Text_Bottom = styled.span`
   margin-bottom: 20px;
 
+  ${mediaQueries("tablet")} {
+    font-size: 15px;
+  }
   ${mediaQueries("phone")} {
     font-size: 13px;
   }
@@ -87,6 +108,9 @@ export const Right = styled.div`
   flex-direction: row;
   align-items: center;
 
+  ${mediaQueries("tablet")} {
+    width: 70vw;
+  }
   ${mediaQueries("phone")} {
     width: 70vw;
   }

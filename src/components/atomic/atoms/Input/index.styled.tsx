@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../../commons/libraries/MediaQueries";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -15,6 +16,12 @@ export const Input = styled.input`
 
   ::placeholder {
     color: #bfbfbf;
+  }
+
+  ${mediaQueries("phone")} {
+    width: 70vw;
+    height: 40px;
+    font-size: 12px;
   }
 `;
 

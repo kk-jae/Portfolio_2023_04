@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../../commons/libraries/MediaQueries";
 
 interface IButton {
   width?: number;
@@ -15,4 +16,8 @@ export const Button = styled.button<IButton>`
   cursor: pointer;
   font-weight: 500;
   margin: 0px 3px 0px 3px;
+
+  ${mediaQueries("phone")} {
+    width: ${(props) => (props.width ? `${props.width}px` : "65px")};
+  }
 `;

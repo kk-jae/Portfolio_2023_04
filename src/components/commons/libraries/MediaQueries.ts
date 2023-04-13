@@ -1,5 +1,5 @@
 export const device = {
-  tablet: 1024,
+  tablet: 1124,
   phone: 768,
 };
 

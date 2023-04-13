@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../../../commons/libraries/MediaQueries";
 
 export const Container = styled.div`
   margin: 30px;
   width: 90%;
   background-color: white;
   padding: 30px;
+
+  ${mediaQueries("phone")} {
+    padding: 10px 10px 0px 10px;
+  }
 `;
 export const Seller = styled.div`
   width: 100%;
@@ -32,6 +37,10 @@ export const Seller_Bottom = styled.form`
   width: 100%;
   background-color: #f5f5f5;
   position: relative;
+
+  ${mediaQueries("phone")} {
+    width: 80vw;
+  }
 `;
 
 export const Seller_Bottom_Item = styled.div`
@@ -39,6 +48,21 @@ export const Seller_Bottom_Item = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  ${mediaQueries("phone")} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+export const Seller_Bottom_Item_Title = styled.div`
+  width: 10vw;
+  font-weight: 700;
+
+  ${mediaQueries("phone")} {
+    padding-bottom: 8px;
+    width: 100%;
+    font-size: 14px;
+  }
 `;
 
 export const Seller_Bottom_Item_address = styled.div`
@@ -49,11 +73,6 @@ export const Seller_Bottom_Item_address = styled.div`
 export const Seller_Bottom_Item_Map_Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-export const Seller_Bottom_Item_Title = styled.div`
-  width: 10vw;
-  font-weight: 700;
 `;
 
 export const Img_Item = styled.img`
