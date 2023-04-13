@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../../commons/libraries/MediaQueries";
 
 export const Container = styled.div`
   position: fixed;
@@ -11,7 +12,7 @@ export const Container = styled.div`
   align-items: center;
   padding: 0px 5vw 0px 5vw;
   color: #454552;
-  z-index: 9999;
+  z-index: 10;
 `;
 
 export const Left = styled.div`
@@ -31,6 +32,47 @@ export const Right = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding-top: 5px;
+
+  ${mediaQueries("phone")} {
+    display: none;
+  }
+`;
+export const HamBurger = styled.div`
+  display: none;
+
+  ${mediaQueries("phone")} {
+    display: flex;
+    padding-top: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #4ea1d3;
+  }
+`;
+
+interface IProps {
+  showModalUser?: boolean;
+}
+
+export const MobileTopBar = styled.div<IProps>`
+  display: ${(props) => (props.showModalUser ? "none" : "flex")};
+  /* display: flex; */
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 50vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  padding-left: 10px;
+  color: white;
+`;
+
+export const MenuOut = styled.div`
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const Right_Item = styled.div`

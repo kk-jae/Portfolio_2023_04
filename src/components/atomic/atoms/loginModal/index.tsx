@@ -9,16 +9,19 @@ import { Button } from "../Button";
 import { Schema } from "../../../commons/validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { UseUser } from "../../../commons/hooks/custom/useUser";
+import { useRecoilState } from "recoil";
+import { showModal } from "../../../commons/stores";
 
 export default function Login() {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  const [showModalUser, setShowModalUser] = useRecoilState(showModal);
   const { onClickLogin } = UseUser();
 
   const handleShow = () => {
-    setShowModal(true);
+    setShowModalUser(true);
   };
   const handleClose = () => {
-    setShowModal(false);
+    setShowModalUser(false);
   };
 
   const customStyles = {
@@ -34,11 +37,6 @@ export default function Login() {
     },
   };
 
-  interface IDate {
-    email?: string;
-    password?: string;
-  }
-
   const method = useForm({
     mode: "onChange",
     resolver: yupResolver(Schema),
@@ -50,7 +48,7 @@ export default function Login() {
         <LoginOutlined style={{ fontSize: "25px" }} />
         <S.Container>로그인</S.Container>
       </S.Container>
-      <Modal style={customStyles} isOpen={showModal}>
+      <Modal style={customStyles} isOpen={showModalUser}>
         <S.Cancel>
           <CloseOutlined onClick={handleClose} />
         </S.Cancel>

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { mediaQueries } from "../../../commons/libraries/MediaQueries";
 
 export const Top = styled.div`
   display: flex;
@@ -13,6 +14,11 @@ export const Container = styled.div`
   align-items: center;
   gap: 5px;
   cursor: pointer;
+
+  ${mediaQueries("phone")} {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 export const Cancel = styled.div`

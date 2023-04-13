@@ -13,3 +13,13 @@ export const restoreAccessTokenLoadable = selector({
     return newAccessToken;
   },
 });
+
+// export const openUserModal = atom({
+//   key: "openUserModal",
+//   default: false,
+// });
+
+export const showModal = atom({
+  key: "showModal",
+  default: false,
+});
