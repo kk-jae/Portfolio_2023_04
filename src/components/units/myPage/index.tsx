@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { priceToString } from "../../../commons/libraries/price";
 import { useQueryFetchUserLoggedIn } from "../../commons/hooks/query/useQueryFetchUserLoggedIn";
 import * as S from "../myPage/index.styled";
+import { IBoughtList } from "./IBought";
 
 export default function MyPageUI(): JSX.Element {
   const { data } = useQueryFetchUserLoggedIn();
@@ -22,15 +23,15 @@ export default function MyPageUI(): JSX.Element {
           </S.Profile_left>
           <S.Profile_right>
             <S.Profile_right_text>
-              <S.Right_selet>이름</S.Right_selet>{" "}
+              <S.Right_select>이름</S.Right_select>{" "}
               {data?.fetchUserLoggedIn?.name}
             </S.Profile_right_text>
             <S.Profile_right_text>
-              <S.Right_selet>이메일</S.Right_selet>{" "}
+              <S.Right_select>이메일</S.Right_select>{" "}
               {data?.fetchUserLoggedIn?.email}
             </S.Profile_right_text>
             <S.Profile_right_text>
-              <S.Right_selet>포인트</S.Right_selet>{" "}
+              <S.Right_select>포인트</S.Right_select>{" "}
               {priceToString(
                 Number(data?.fetchUserLoggedIn?.userPoint?.amount)
               )}{" "}
@@ -39,6 +40,7 @@ export default function MyPageUI(): JSX.Element {
           </S.Profile_right>
         </S.Profile_Wrapper>
       </S.Wrapper>
+      <IBoughtList />
     </S.Container>
   );
 }

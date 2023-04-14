@@ -42,7 +42,7 @@ export const Profile_right_text = styled.div`
   display: flex;
   line-height: 30px;
 `;
-export const Right_selet = styled.span`
+export const Right_select = styled.span`
   width: 70px;
   font-weight: 500;
 `;
