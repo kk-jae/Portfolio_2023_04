@@ -15,6 +15,10 @@ export const Container = styled.div`
   gap: 5px;
   cursor: pointer;
 
+  ${mediaQueries("tablet")} {
+    display: flex;
+    flex-direction: row;
+  }
   ${mediaQueries("phone")} {
     display: flex;
     flex-direction: row;
