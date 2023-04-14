@@ -1,3 +1,4 @@
+import { mediaQueries } from "./../../../commons/libraries/MediaQueries";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
@@ -41,22 +42,44 @@ export const Left_Img = styled.img`
   width: 70px;
   height: 70px;
   object-fit: cover;
+
+  ${mediaQueries("phone")} {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const Right = styled.div`
   width: 100%;
   padding: 5px 5px 5px 30px;
+
+  ${mediaQueries("phone")} {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Title = styled.div`
   display: flex;
   padding-bottom: 5px;
   font-weight: 700;
+
+  ${mediaQueries("phone")} {
+    flex-direction: column;
+  }
 `;
 
 export const Title_item = styled.div`
   width: 100px;
   font-weight: 500;
+
+  ${mediaQueries("phone")} {
+    font-size: 0.7rem;
+  }
 `;
 
-export const Detail = styled.div``;
+export const Detail = styled.div`
+  ${mediaQueries("phone")} {
+    font-size: 0.8rem;
+  }
+`;
