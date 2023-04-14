@@ -2,12 +2,13 @@
 
 배포 링크 : kk-jae.com (현재 백엔드 인스턴스 작업 중으로 fetch되지 않을 수 있습니다.)
 
-https://user-images.githubusercontent.com/114847858/231348284-8433fe88-4f4c-4771-a32b-c338abb629ac.mp4
+![기능구현](https://user-images.githubusercontent.com/114847858/231937310-65599354-51fe-45d2-a0da-425e28c5e311.gif)
+
 
 ## 📝적용된 기능 
 
 ## 반응형 디자인
-![TopBar반응형](https://user-images.githubusercontent.com/114847858/231764404-e461c1d6-870d-4a9b-b200-a3223410f2e0.gif)
+![반응형](https://user-images.githubusercontent.com/114847858/231937333-43703110-4c61-4676-b732-c90610675de8.gif)
 
 ## 1. 로그인 / 회원가입
 
