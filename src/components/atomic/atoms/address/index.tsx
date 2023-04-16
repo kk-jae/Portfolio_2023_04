@@ -1,7 +1,6 @@
 import { Modal } from "antd";
 import { useState } from "react";
 import KakaoMapPage from "../../../commons/kakaoMap";
-import { Button } from "../Button";
 import { Input } from "../Input";
 import * as S from "./index.styled";
 import DaumPostcodeEmbed from "react-daum-postcode";

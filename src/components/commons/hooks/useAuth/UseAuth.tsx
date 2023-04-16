@@ -7,7 +7,7 @@ import { accessTokenState, restoreAccessTokenLoadable } from "../../stores";
 export const useAuth = (): void => {
   const router = useRouter();
   const aaa = useRecoilValueLoadable(restoreAccessTokenLoadable);
-  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+  const [accessToken] = useRecoilState(accessTokenState);
 
   useEffect(() => {
     if (accessToken === "") {

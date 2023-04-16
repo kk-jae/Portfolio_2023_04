@@ -1,6 +1,5 @@
 import { CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { useForm, FormProvider } from "react-hook-form";
-import { useState } from "react";
 import Modal from "react-modal";
 import { Input } from "../Input";
 import SighUp from "../sighUpModal";
