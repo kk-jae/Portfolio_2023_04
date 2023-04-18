@@ -81,7 +81,7 @@ export default function PaymentUI() {
             },
           });
           alert("결제가 완료되었습니다.");
-          window.location.replace("/Market/myPage");
+          window.location.replace("/Market/mypage");
         } else {
           alert("결제 실패, 다시 시도해주세요");
         }
