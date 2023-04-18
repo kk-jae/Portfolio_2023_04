@@ -53,11 +53,11 @@ export const UseUser = () => {
       Modal.success({
         content: "로그인에 성공하였습니다.",
       });
-      const accessToken = createLogIn.data.loginUser.accessToken;
+      const accessToken = createLogIn.data?.loginUser.accessToken;
       if (accessToken !== undefined) {
         setAccessToken(accessToken);
       }
-      router.push("/Market/home");
+      window.location.replace("/Market/list");
     } catch (error) {
       if (error instanceof Error) {
         Modal.error({

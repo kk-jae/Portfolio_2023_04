@@ -14,11 +14,6 @@ export const restoreAccessTokenLoadable = selector({
   },
 });
 
-// export const openUserModal = atom({
-//   key: "openUserModal",
-//   default: false,
-// });
-
 export const showModal = atom({
   key: "showModal",
   default: false,

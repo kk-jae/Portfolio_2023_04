@@ -14,7 +14,7 @@ import PaymentUI from "../../../units/payment";
 import { priceToString } from "../../../../commons/libraries/price";
 import { UsedItemMobileTopBar } from "../useitemMobileTopbar";
 import { useState } from "react";
-import { showModal } from "../../../commons/stores";
+import { accessTokenState, showModal } from "../../../commons/stores";
 import { useRecoilState } from "recoil";
 
 export const UsedItemTopBar = () => {
@@ -22,7 +22,8 @@ export const UsedItemTopBar = () => {
   const { onClickLogOut } = UseUser();
   const { data } = useQueryFetchUserLoggedIn();
   const [openTopBar, setOpenTobBar] = useState(false);
-  const [showModalUser, setShowModalUser] = useRecoilState(showModal);
+  const [showModalUser] = useRecoilState(showModal);
+  const [accessToken] = useRecoilState(accessTokenState);
 
   const onClickOpenTopBar = () => {
     setOpenTobBar((prev) => !prev);

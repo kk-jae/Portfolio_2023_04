@@ -5,8 +5,6 @@ import * as S from "./index.styled";
 export const IBoughtList = () => {
   const { data } = useQueryFetchUseditemsIBought();
 
-  console.log(data);
-
   return (
     <S.Container>
       <S.Wrapper>

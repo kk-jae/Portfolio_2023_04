@@ -38,7 +38,7 @@ export default function ApolloSetting(props: IApolloSettingProps): JSX.Element {
               operation.setContext({
                 headers: {
                   ...operation.getContext().headers,
-                  Authorization: `Bearer ${String(newAccessToken)}`,
+                  Authorization: `Bearer ${newAccessToken}`,
                 },
               });
             })

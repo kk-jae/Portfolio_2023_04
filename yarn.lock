@@ -4275,9 +4275,9 @@ rc-menu@~9.8.0, rc-menu@~9.8.3:
     rc-util "^5.27.0"
 
 rc-motion@^2.0.0, rc-motion@^2.0.1, rc-motion@^2.3.0, rc-motion@^2.3.4, rc-motion@^2.4.3, rc-motion@^2.4.4, rc-motion@^2.6.0, rc-motion@^2.6.1, rc-motion@^2.6.2:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/rc-motion/-/rc-motion-2.7.0.tgz#1603a54f84df8163bc89b60594f5484b5f406356"
-  integrity sha512-gszH/FPVtQ3eb+02Mcqr1PLY36w+Hqkb5jN5t89gKJYK854Lz4TrIgnOxx4+KXeWgvQ/lrLp3yzCYCIzuihWRA==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/rc-motion/-/rc-motion-2.7.1.tgz#a4538d142e11c9c2e000ea4626ed0fac920269c4"
+  integrity sha512-TpLEr3EriW2Jo6Zqub/KIEaX80g2Wbsp/On7Q2hdr4ClDfpraEv5n+aDORMdFWMtINoQgRuNTDmvUaKKc2sVpQ==
   dependencies:
     "@babel/runtime" "^7.11.1"
     classnames "^2.2.1"
