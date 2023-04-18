@@ -1,6 +1,5 @@
 ## 권현재의 Market
 
-배포 링크 : kk-jae.com (현재 백엔드 인스턴스 작업 중으로 fetch되지 않을 수 있습니다.)
 
 ![기능구현](https://user-images.githubusercontent.com/114847858/231937310-65599354-51fe-45d2-a0da-425e28c5e311.gif)
 
