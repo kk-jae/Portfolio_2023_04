@@ -66,7 +66,6 @@ interface IProps {
 
 export const MobileTopBar = styled.div<IProps>`
   display: ${(props) => (props.showModalUser ? "none" : "flex")};
-  /* display: flex; */
   flex-direction: column;
   position: absolute;
   width: 100%;
